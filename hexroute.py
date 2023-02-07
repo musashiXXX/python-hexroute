@@ -48,7 +48,7 @@ def hexroute(routes: list, uppercase=True) -> str:
 
 def hexroute_reverse(hex_string):
     '''
-       Takes a hexadecimal DHCP option 249 string and returns the IPv4 networks and their gateways
+       Takes a hexadecimal DHCP option 121/249 string and returns the IPv4 networks and their gateways
 
        >>> hexroute_reverse('18:C0:A8:64:C0:A8:64:01')
        [(IPv4Network('192.168.100.0/24'), IPv4Address('192.168.100.1'))]
@@ -80,7 +80,7 @@ def hexroute_reverse(hex_string):
     return routes
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description = 'Generate or parse a DHCP option 249 hexadecimal string')
+    parser = argparse.ArgumentParser(description = 'Generate or parse a DHCP option 121/249 hexadecimal string')
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument(
         '-r',
